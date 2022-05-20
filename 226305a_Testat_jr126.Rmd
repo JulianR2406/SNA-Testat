@@ -1,0 +1,59 @@
+---
+title: "226305a Testat Teil 2"
+author: "Julian Rebmann | jr126@hdm-stuttgart.de"
+date: "Sommersemester 2022"
+output:
+  html_document:
+    df_print: paged
+    toc: yes
+    toc_depth: 3
+    number_sections: yes
+subtitle: "Analyse des Transfernetzwerks des VfB Stuttgart""
+editor_options: 
+  markdown: 
+    wrap: 72
+---
+
+# Daten und Codebuch
+
+Die Daten und das Codebuch sind in meinem
+[Github-Account](https://github.com/JulianR2406/SNA-Testat)
+hinterlegt.
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(igraph)
+```
+
+```{r Gesamtnetzwerk erstellen, echo=FALSE}
+
+# Bibliothek aufrufen
+library(igraph)
+
+# Einlesen der Edge- und Nodelist
+vfbedges <- read.csv("https://raw.githubusercontent.com/JulianR2406/SNA-Testat/main/vfbedges.csv", header=T, as.is=T, sep = ",")
+vfbnodes <- read.csv("https://raw.githubusercontent.com/JulianR2406/SNA-Testat/main/vfbnodes.csv", header=T, as.is=T, sep = ",")
+
+# Matrix erstellen
+edgematrix <-as.matrix(vfbedges)
+
+# Zusammenführen von Edge- und Nodelist als igraph-Objekt vfb
+vfb <- graph_from_data_frame(d=edgematrix, vertices = vfbnodes, directed=F)
+vfb
+```
+
+```{r Netzwerk visualisieren, fig.height=6, fig.width=9}
+
+# Netzwerk visualisieren
+
+plot(vfb,
+     asp=0,
+     layout=layout.graphopt(vfb),
+     rescale=TRUE,
+     vertex.color="red",
+     vertex.size=degree(vfb)*2,
+     vertex.frame.color=NA,
+     edge.arrow.size=.2,
+     main="Transfernetzwerk VfB Stuttgart")
+
+```
