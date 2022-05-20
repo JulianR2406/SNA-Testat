@@ -14,7 +14,7 @@ id,name,country,type
 6,Clinton Mola,England,1
 8,Enzo Millot,Frankreich,1
 28,Nikolas Nartey,Dänemark,1
-14,Silas Katompa Mvumpa,DR Kongo,1
+14,Silas Katompa Mvumpa,Kongo,1
 30,Roberto Massimo,Deutschland,1
 11,Erik Thommy,Deutschland,1
 20,Philipp Förster,Deutschland,1
@@ -45,7 +45,7 @@ Juventus,Juventus Turin,Italien,2
 Chelsea,FC Chelsea London,England,2
 Monaco,AS Monaco,Frankreich,2
 Sandhausen,SV Sandhausen,Deutschland,2
-Paris FC,Paris FC,Frankreich,2
+ParisFC,Paris FC,Frankreich,2
 Bielefeld,Arminia Bielefeld,Deutschland,2
 Augsburg,FC Augsburg,Deutschland,2
 Instituto,Instituto AC,Argentinien,2
@@ -63,7 +63,7 @@ Usbekistan,,,
 Japan,,,
 Kroatien,,,
 Belgien,,,
-DR Kongo,,,
+Kongo,,,
 Frankreich,,,
 Komoren,,,
 England,,,
